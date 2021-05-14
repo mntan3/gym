@@ -21,7 +21,7 @@
           </cylinder>
         </geometry>
         <material>
-          <diffuse>{r} {g} {b} 1.0</diffuse>
+          <diffuse>0.258 0.109 0.372 1.0</diffuse>
         </material>
       </visual>
     
@@ -33,7 +33,7 @@
           </sphere>
         </geometry>
         <material>
-          <diffuse>0.4 0.4 0.4 1.0</diffuse>
+          <diffuse>0.258 0.109 0.372 1.0</diffuse>
         </material>
       </visual>
 
@@ -45,7 +45,7 @@
           </sphere>
         </geometry>
         <material>
-          <diffuse>0.4 0.4 0.4 1.0</diffuse>
+          <diffuse>0.258 0.109 0.372 1.0</diffuse>
         </material>
       </visual>
 
@@ -61,8 +61,8 @@
         <surface>
           <friction>
           <ode>
-            <mu>0.5</mu>
-            <mu2>0.5</mu2>
+            <mu>1</mu>
+            <mu2>1</mu2>
           </ode>
           </friction>
         </surface>

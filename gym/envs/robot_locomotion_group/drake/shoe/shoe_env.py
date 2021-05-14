@@ -3,12 +3,17 @@ import meshcat
 import numpy as np
 import os
 import yaml
+import math
 
 import gym
 from gym import error, spaces, utils
-from gym.envs.robot_locomotion_group.drake.shoe.build_shoe_diagram import (
-    reset_simulator_from_config,
-    build_shoe_diagram
+# from gym.envs.robot_locomotion_group.drake.shoe.build_shoe_diagram import (
+#     reset_simulator_from_config,
+#     build_two_rope_two_arm_diagram
+# )
+from gym.envs.robot_locomotion_group.drake.shoe.build_two_arm_shoe_diagram import (
+    reset_simulator,
+    build_two_rope_two_arm_diagram
 )
 from gym.envs.robot_locomotion_group.drake.shoe.floating_hand_controllers import (
     modify_targets
@@ -30,8 +35,8 @@ class ShoeEnv(gym.Env):
         if self.config["env"]["meshcat"]:
             vis = meshcat.Visualizer()
         self.step_dt = self.config["env"]["step_dt"]
-        sim_objects = build_shoe_diagram(self.config)
-        self.simulator, self.diagram, self.systems, self.visualizer = sim_objects
+        sim_objects = build_two_rope_two_arm_diagram(self.config)
+        self.simulator, self.diagram, self.systems = sim_objects
 
         self.action_space = spaces.Box(
             low=-0.1,
@@ -50,10 +55,12 @@ class ShoeEnv(gym.Env):
         """
         if action is not None:
             _, instructions = x_to_open_loop_instructions(action, 1)
-            modify_targets(self.simulator, self.diagram, self.systems,
-                            instructions[0])
+            self.systems["arms_controller"].set_drpyxyzw(
+                {"left":  list(instructions[0]["left"]) + [instructions[0]["left_width"]],   # Tilt up and align gripper
+                "right":  list(instructions[0]["right"]) + [instructions[0]["right_width"]]})(),
         new_time = self.simulator.get_context().get_time() + self.step_dt
         success = self.simulator.AdvanceTo(new_time)
+        
         new_obs = get_gripper_velocities(self.diagram, self.simulator, self.systems)
         return new_obs, 0, success, {}
 
@@ -64,7 +71,8 @@ class ShoeEnv(gym.Env):
         """
         if config is None:
             config = self.config
-        reset_simulator_from_config(self.config, self.simulator, self.diagram, self.systems)
+
+        reset_simulator(self.config, self.simulator, self.diagram, self.systems)
 
     def close(self):
         pass

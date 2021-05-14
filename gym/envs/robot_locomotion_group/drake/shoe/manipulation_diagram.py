@@ -4,6 +4,7 @@ import math
 import numpy as np
 from tinydb import TinyDB, Query
 from tinydb.storages import MemoryStorage
+import zmq
 
 from pydrake.geometry import (
     Box,
@@ -221,7 +222,7 @@ class ManipulationDiagram(Diagram):
 
         # Add gripper controller stack
         gripper_controller = self._builder.AddSystem(
-            SchunkWsgPositionController(0.001, 4000, 5))
+            SchunkWsgPositionController(0.001, 8000, 5))
         mbp_to_gripper_gain = np.array([[-1., 1., 0., 0.], [0., 0., -1., 1.]])
         mbp_to_gripper_state = self._builder.AddSystem(
             MatrixGain(mbp_to_gripper_gain))
@@ -472,8 +473,8 @@ class ManipulationDiagram(Diagram):
     # === Add visualizers ===========================================
     def connect_to_meshcat(self):
         meshcat = ConnectMeshcatVisualizer(self._builder, scene_graph=self._sg,
-                                           zmq_url="tcp://127.0.0.1:6000",
-                                           draw_period=1)
+                                        #    zmq_url="tcp://127.0.0.1:6000",
+                                           draw_period=0.2)
         return meshcat
 
     def connect_to_drake_visualizer(self):

@@ -23,6 +23,7 @@ iiwa_7_box_collision_path = FindResourceOrThrow(
 #       "drake/manipulation/models/wsg_50_description/sdf/schunk_wsg_50.sdf")
 base_folder = os.path.abspath(os.path.dirname(__file__))
 schunk_path = os.path.join(base_folder, "model/schunk_wsg_50.sdf")
+# schunk_path = os.path.join(base_folder, "model/schunk_wsg_50_fancy.sdf")
 # schunk_path = os.path.join(get_project_dir(), "rope_sim/model/new_schunk.sdf")
 # schunk_path = FindResourceOrThrow(
 #       "drake/manipulation/models/wsg_50_description/sdf/schunk_wsg_50_with_tip.sdf")

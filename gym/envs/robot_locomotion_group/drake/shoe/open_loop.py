@@ -59,26 +59,26 @@ def get_instructions():
         {"left":  [0, 0, 0, 0.2, 0.1, 0.0],   # Lift rope, align, grippers come together
          "right":  [0, 0, 0, -0.1, -0, 0.1],
          "left_width": 0.1, "right_width": 0},
-        {"left":  [0, 0, 0, 0, 0.1, 0.0],   # Lift rope, align, grippers come together
+        {"left":  [0, 0, 0, 0, 0.1, 0.02],   # Lift rope, align, grippers come together
          "right":  [0, 0, 0, 0, -0.1, 0],
          "left_width": 0, "right_width": 0},
         {"left":  [0, 0, 0, 0, 0, 0],   # Close gripper
          "right":  [0, 0, 0, 0, 0, 0],
          "left_width": -0.1, "right_width": 0},
         {"left":  [0, 0, 0, 0, -0.1, 0.05],   # Align for 2nd rope part 1
-         "right":  [0, 0, 0, -0.05, 0., -0.05],
+         "right":  [0, 0, 0, -0.03, 0., -0.05],
          "left_width": 0, "right_width": 0},
         {"left":  [0, 0, 0, 0, 0, 0.05],   # Align for 2nd rope rope 2
-         "right":  [0, 0, 0, 0.0, -0.15, -0.1],
+         "right":  [0, 0, 0, 0.0, -0.12, -0.06],
          "left_width": 0, "right_width": 0.1},
         {"left":  [0, 0, 0, 0, 0, 0],   # Close gripper
          "right":  [0, 0, 0, 0, 0, 0],
          "left_width": 0, "right_width": -0.1},
         {"left":  [0, 0, 0, 0, -0.1, -0.05],   # Final rope pull
-         "right":  [0, 0, 0, 0, 0.1, 0.1],
+         "right":  [0, 0, 0, 0, 0.15, 0.1],
          "left_width": 0, "right_width": 0},
         {"left":  [0, 0, 0, -0.1, -0.2, -0.1],   # Final rope pull
-         "right":  [0, 0, 0, 0, 0.3, -0.05],
+         "right":  [0, 0, 0, 0, 0.27, -0.1],
          "left_width": 0, "right_width": 0},
     ]
     return instructions

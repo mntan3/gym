@@ -17,29 +17,16 @@
       </inertial>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name="visual">
         <geometry>
-          <box>
-            <size>0.146 0.0725 0.049521</size>
-          </box>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/wsg_body.obj</uri>
+          </mesh>
         </geometry>
         <material>
-          <lighting>1</lighting>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
-          </script>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 0.5</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
-          <shader type='vertex'>
-            <normal_map>__default__</normal_map>
-          </shader>
+          <diffuse>0.7 0.7 0.7 1</diffuse>
         </material>
-        <cast_shadows>1</cast_shadows>
-        <transparency>0</transparency>
       </visual>
       <collision name='body_collision'>
         <laser_retro>0</laser_retro>
@@ -116,53 +103,16 @@
       </inertial>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name="visual">
         <geometry>
-          <box>
-            <size>0.016 0.075 0.02</size>
-          </box>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/finger_with_tip.obj</uri>
+          </mesh>
         </geometry>
         <material>
-          <lighting>1</lighting>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
-          </script>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 0.5</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
-          <shader type='vertex'>
-            <normal_map>__default__</normal_map>
-          </shader>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
         </material>
-        <cast_shadows>1</cast_shadows>
-        <transparency>0</transparency>
-      </visual>
-      <visual name='visual_inbox'>
-        <pose frame=''>0.008 0.0275 0.0 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.016 0.02 0.02</size>
-          </box>
-        </geometry>
-        <material>
-          <lighting>1</lighting>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
-          </script>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 0.5</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
-          <shader type='vertex'>
-            <normal_map>__default__</normal_map>
-          </shader>
-        </material>
-        <cast_shadows>1</cast_shadows>
-        <transparency>0</transparency>
       </visual>
       <collision name='left_collision'>
         <laser_retro>0</laser_retro>
@@ -291,53 +241,16 @@
       </inertial>
       <self_collide>0</self_collide>
       <kinematic>0</kinematic>
-      <visual name='visual'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
+      <visual name="visual">
         <geometry>
-          <box>
-            <size>0.016 0.075 0.02</size>
-          </box>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>meshes/finger_with_tip.obj</uri>
+          </mesh>
         </geometry>
         <material>
-          <lighting>1</lighting>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
-          </script>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 0.5</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
-          <shader type='vertex'>
-            <normal_map>__default__</normal_map>
-          </shader>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
         </material>
-        <cast_shadows>1</cast_shadows>
-        <transparency>0</transparency>
-      </visual>
-      <visual name='visual_inbox'>
-        <pose frame=''>-0.008 0.0275 0.0 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>0.016 0.02 0.02</size>
-          </box>
-        </geometry>
-        <material>
-          <lighting>1</lighting>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Grey</name>
-          </script>
-          <ambient>0.3 0.3 0.3 1</ambient>
-          <diffuse>0.7 0.7 0.7 0.5</diffuse>
-          <specular>0.01 0.01 0.01 1</specular>
-          <emissive>0 0 0 1</emissive>
-          <shader type='vertex'>
-            <normal_map>__default__</normal_map>
-          </shader>
-        </material>
-        <cast_shadows>1</cast_shadows>
-        <transparency>0</transparency>
       </visual>
       <collision name='right_collision'>
         <laser_retro>0</laser_retro>

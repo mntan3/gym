@@ -47,7 +47,7 @@ def build_shoe_diagram(config):
         station.add_arms_from_config(config)
     parser = Parser(station.mbp, station.sg)
     shoe_dir = os.path.dirname(os.path.abspath(__file__))
-    model_file = os.path.join(shoe_dir, "model/shoe.sdf")
+    model_file = os.path.join(shoe_dir, "model/shoe_realistic.sdf")
     shoe_model = parser.AddModelFromFile(model_file, "shoe")
     if config["env"]["visualization"]:
         station.connect_to_drake_visualizer()
